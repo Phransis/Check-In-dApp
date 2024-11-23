@@ -1,0 +1,458 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_user",
+						"type": "address"
+					}
+				],
+				"name": "CheckInSuccessful",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "bytes32",
+						"name": "_errorMessage",
+						"type": "bytes32"
+					}
+				],
+				"name": "CheckOutFailed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "isCheckedIn",
+						"type": "bool"
+					}
+				],
+				"name": "NewVisitorAdded",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_contact",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_recipient",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_purpose",
+						"type": "string"
+					}
+				],
+				"name": "addVisitor",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "Id",
+						"type": "uint256"
+					}
+				],
+				"name": "checkOut",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "Id",
+						"type": "uint256"
+					}
+				],
+				"name": "checkOutFailed",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "checkinvisitors",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "Id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "contact",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "recipient",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "purpose",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timeIn",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timeOut",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "signature",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bool",
+						"name": "isCheckedIn",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "isCheckedOut",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getTotalVisitors",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "getVisitorDetails",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "Id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "contact",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "recipient",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "purpose",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timeIn",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timeOut",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "signature",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "bool",
+								"name": "isCheckedIn",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "isCheckedOut",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct CheckIn.Visitor",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "getVisitorSignature",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalVisitors",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "Id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_contact",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_recipient",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_purpose",
+						"type": "string"
+					}
+				],
+				"name": "updateVisitorDetails",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "Id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "_signature",
+						"type": "bytes32"
+					}
+				],
+				"name": "updateVisitorSignature",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "visitors",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "Id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "contact",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "recipient",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "purpose",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timeIn",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timeOut",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "signature",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bool",
+						"name": "isCheckedIn",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "isCheckedOut",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/CheckIn.sol": "CheckIn"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/CheckIn.sol": {
+			"keccak256": "0x837d23cedc59b64628814fadd02669b4f3d49cd02c662df074e59da1be44fa62",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6fb8d0f88d2a7a32b1c63e194377d2447c9a35b6285d2f4e43b599011726c5c9",
+				"dweb:/ipfs/QmWgKxBKhwPNqM9gn1kiaREqRYvNrYzgJNUfbXnQ6Z4cq6"
+			]
+		}
+	},
+	"version": 1
+}
